@@ -119,7 +119,8 @@ tools:context="com.example.sara.qafelah.MainActivity">
         android:layout_below="@+id/emailEdit"
         android:layout_alignRight="@+id/emailEdit"
         android:layout_alignEnd="@+id/emailEdit"
-        android:id="@+id/emailError" />
+        android:id="@+id/emailError"
+        android:textColor="@android:color/holo_red_dark" />
 
     <TextView
         android:text=""
@@ -128,6 +129,7 @@ tools:context="com.example.sara.qafelah.MainActivity">
         android:layout_below="@+id/passEdit"
         android:layout_alignRight="@+id/passEdit"
         android:layout_alignEnd="@+id/passEdit"
-        android:id="@+id/passError" />
+        android:id="@+id/passError"
+        android:textColor="@android:color/holo_red_dark" />
 
 </RelativeLayout>
