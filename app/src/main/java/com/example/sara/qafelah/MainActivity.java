@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
                 confirmPass = confirmPassEdit.getText().toString();
                 email = email.toLowerCase();
 
+                if(name.equals("") || email.equals("") || pass.equals("")){
+                    Toast.makeText(getApplicationContext() ,"بياناتك ناقصة :(" , Toast.LENGTH_LONG).show();
+                } else {
                 emailError.setText("");
                 passError.setText("");
                 passEdit.setText("");
@@ -80,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext() , appDB.showDB() , Toast.LENGTH_LONG).show();
 
+                }
             }
 
 
