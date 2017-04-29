@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         appDB = new DBClass(this);
 
-        //to disable copy/past in password fields :)
+        //to disable copy/paste in password fields :)
         passEdit.setLongClickable(false);
         confirmPassEdit.setLongClickable(false);
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 passEdit.setText("");
                 confirmPassEdit.setText("");
 
-                if(!appDB.isEmailExit(email)) {
+                if(!appDB.isEmailExist(email)) {
 
                     if (pass.equals(confirmPass)) {
                         appDB.addUserRecord(name,email,pass, 0 , 1 );
@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
             //go to login Activity
             if(v.getId() == R.id.loginView){
 
-//                Intent in = new Intent(getApplicationContext(),LoginActivity.class);
-//                startActivity(in);
+                Intent in = new Intent(getApplicationContext(),LoginActivity.class);
+               startActivity(in);
 
                 }
             }
