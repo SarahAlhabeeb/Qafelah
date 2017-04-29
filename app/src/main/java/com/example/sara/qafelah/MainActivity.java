@@ -1,6 +1,7 @@
 package com.example.sara.qafelah;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView logView , passError , emailError ;
     String name , email , pass , confirmPass ;
     DBClass appDB ;
+    SharedPreferences userAccount ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
                 pass = passEdit.getText().toString();
                 confirmPass = confirmPassEdit.getText().toString();
                 email = email.toLowerCase();
+                userAccount = getSharedPreferences("UserAccount" , 0) ;
+                SharedPreferences.Editor editor = userAccount.edit() ;
 
                 if(name.equals("") || email.equals("") || pass.equals("")){
                     Toast.makeText(getApplicationContext() ,"بياناتك ناقصة :(" , Toast.LENGTH_LONG).show();
@@ -72,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
 
                     if (pass.equals(confirmPass)) {
                         appDB.addUserRecord(name,email,pass, 0 , 1 );
+                        //Go to Main Page
+                         startActivity(new Intent(getApplicationContext() , MainPageActivity.class));
+                        //Store date of user in shared Preference
+                        editor.putString("name" , name);
+                        editor.putString("email" , email);
+                        editor.putString("password" , pass);
+                        editor.putInt("score" , 0);
+                        editor.putInt("level" , 1);
+                        editor.commit();
 
                     } else {
                         passError.setText("كلمات السر غير متطابقة :(");
@@ -81,7 +94,9 @@ public class MainActivity extends AppCompatActivity {
                     emailError.setText("البريد الإلكتروني موجود");
                 }
 
-                Toast.makeText(getApplicationContext() , appDB.showDB() , Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext() , appDB.showDB() + userAccount.getString("name",null) +
+//                        userAccount.getString("email",null) + userAccount.getString("password",null) +
+//                        userAccount.getInt("score", 0) + userAccount.getInt("level" , 0) , Toast.LENGTH_LONG).show();
 
                 }
             }
