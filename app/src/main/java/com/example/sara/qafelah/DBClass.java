@@ -24,6 +24,7 @@ public class DBClass extends SQLiteOpenHelper {
     public static final String GRID_TBL = "Grid";
 
     //Define Columns of User Table
+    
     public static final String ID_COL = "ID";
     public static final String NAME_COL = "Name";
     public static final String EMAIL_COL = "Email";
