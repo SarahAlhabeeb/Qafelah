@@ -39,7 +39,7 @@ public class DBClass extends SQLiteOpenHelper {
     public static final String GRID_ID_COL = "GridID";
     public static final String DIFF_LVL_COL = "Difficultly_Lvl";
 
-    //Define Columns of Grid Table 
+    //Define Columns of Grid Table
     public static final String CHARS_COL = "GridChars";
 
 
