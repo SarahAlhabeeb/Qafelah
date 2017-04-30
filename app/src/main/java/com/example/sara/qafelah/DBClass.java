@@ -20,11 +20,10 @@ public class DBClass extends SQLiteOpenHelper {
 
     //Define Tables
     public static final String USER_TBL = "User";
-    public static final String QUESTION_TBL = "Question"; // contain question , answer , hint , GridID and Difficultly Level
+    public static final String QUESTION_TBL = "Question"; // contain questions , answer , hint , GridID and Difficultly Level
     public static final String GRID_TBL = "Grid";
 
     //Define Columns of User Table
-    
     public static final String ID_COL = "ID";
     public static final String NAME_COL = "Name";
     public static final String EMAIL_COL = "Email";
