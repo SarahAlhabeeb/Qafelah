@@ -8,6 +8,30 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@mipmap/levelsbg"
     tools:context="com.example.sara.qafelah.MainPageActivity">
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="البداية"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_marginTop="425dp"
+        android:layout_below="@+id/btnmenu"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btnmenu"
+        android:layout_width="20dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="30dp"
+        android:background="@mipmap/bmenuslider"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp" />
 
 </RelativeLayout>

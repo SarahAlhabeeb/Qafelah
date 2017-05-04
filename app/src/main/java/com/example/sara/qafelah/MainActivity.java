@@ -2,6 +2,7 @@ package com.example.sara.qafelah;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -35,6 +36,18 @@ public class MainActivity extends AppCompatActivity {
         logView = (TextView) findViewById(R.id.loginView);
         emailError = (TextView) findViewById(R.id.emailError) ;
         passError = (TextView) findViewById(R.id.passError) ;
+
+        //To change the font
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/ithra-light-webfont.ttf");
+        Typeface type2 = Typeface.createFromAsset(getAssets(),"fonts/Farah.ttc");
+        nameEdit.setTypeface(type);
+        emailEdit.setTypeface(type);
+        passEdit.setTypeface(type);
+        confirmPassEdit.setTypeface(type);
+        registerBtn.setTypeface(type);
+        logView.setTypeface(type2);
+
+
 
         appDB = new DBClass(this);
 
@@ -87,11 +100,11 @@ public class MainActivity extends AppCompatActivity {
                         editor.commit();
 
                     } else {
-                        passError.setText("كلمات السر غير متطابقة :(");
+                        passError.setText("كلمات السر غير متطابقة!");
                     }
 
                 } else {
-                    emailError.setText("البريد الإلكتروني موجود");
+                    emailError.setText("البريد الإلكتروني مسجل مسبقا");
                 }
 
 //                Toast.makeText(getApplicationContext() , appDB.showDB() + userAccount.getString("name",null) +
@@ -104,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
 
             //go to login Activity
             if(v.getId() == R.id.loginView){
-
                 Intent in = new Intent(getApplicationContext(),LoginActivity.class);
                startActivity(in);
 
