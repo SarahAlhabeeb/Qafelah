@@ -20,16 +20,16 @@ public class Menu extends AppCompatActivity {
         aboutBtn = (Button) findViewById(R.id.btnAbout);
         menuB=(Button) findViewById(R.id.menub);
 
-       // profileBtn.setOnClickListener(new View.OnClickListener() {
+        profileBtn.setOnClickListener(new View.OnClickListener() {
 
-            //public void onClick(View v) {
-              //  Intent Int = new Intent(getApplicationContext(),Profile.class);
-             //   startActivity(Int);
-             //   finish();
+            public void onClick(View v) {
+                Intent Int = new Intent(getApplicationContext(),ProfileActivity.class);
+                startActivity(Int);
+                finish();
 
-         //   }
+            }
 
-      //  });
+        });
 
         aboutBtn.setOnClickListener(new View.OnClickListener() {
 

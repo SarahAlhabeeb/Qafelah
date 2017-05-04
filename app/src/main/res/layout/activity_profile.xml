@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.sara.qafelah.ProfileActivity">
+
+    <TextView
+        android:id="@+id/PscoreView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="عدد النقاط"
+        android:layout_alignBaseline="@+id/PlevelView"
+        android:layout_alignBottom="@+id/PlevelView"
+        android:layout_toLeftOf="@+id/PtextView"
+        android:layout_toStartOf="@+id/PtextView" />
+
+    <TextView
+        android:id="@+id/PtextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="البريد الالكتروني"
+        android:layout_marginTop="65dp"
+        android:layout_below="@+id/PtextView"
+        android:layout_alignLeft="@+id/PtextView"
+        android:layout_alignStart="@+id/PtextView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/PnameEdit"
+        android:layout_below="@+id/PtextView"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/PemailEdit"
+        android:layout_below="@+id/PtextView2"
+        android:layout_alignLeft="@+id/PnameEdit"
+        android:layout_alignStart="@+id/PnameEdit" />
+
+    <TextView
+        android:id="@+id/PtextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:text="اسم المستخدم"
+        android:layout_below="@+id/PscoreView"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="حذف الحساب"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:id="@+id/PdeleteBtn"
+        android:layout_below="@+id/PsignOutBtn"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/PlevelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="137dp"
+        android:text="المستوى"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/PtextView"
+        android:layout_toEndOf="@+id/PtextView" />
+
+    <Button
+        android:text="تسجيل الخروج"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/PsignOutBtn"
+        android:layout_below="@+id/PemailEdit"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PscoreValue"
+        android:layout_marginBottom="25dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp"
+        android:layout_above="@+id/PscoreView"
+        android:layout_toLeftOf="@+id/PsignOutBtn"
+        android:layout_toStartOf="@+id/PsignOutBtn" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/PlevelValue"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignBaseline="@+id/PscoreValue"
+        android:layout_alignBottom="@+id/PscoreValue"
+        android:layout_toRightOf="@+id/PsignOutBtn"
+        android:layout_toEndOf="@+id/PsignOutBtn" />
+
+
+</RelativeLayout>

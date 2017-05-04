@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@mipmap/signpagebg"
-    tools:context="com.example.sara.qafelah.MainActivity">
+    tools:context="com.example.sara.qafelah.SignUpActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -38,7 +38,7 @@
         android:textAlignment="center"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/nameEdit"
+        android:id="@+id/PnameEdit"
         android:hint="الاسم"
         android:background="@mipmap/txtbg"
         android:layout_below="@+id/imageView"
@@ -53,12 +53,12 @@
         android:textAlignment="center"
     android:inputType="textEmailAddress"
     android:ems="10"
-        android:id="@+id/emailEdit"
+        android:id="@+id/PemailEdit"
         android:hint="البريد الإلكتروني"
         android:background="@mipmap/txtbg"
         android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/nameEdit"
-        android:layout_alignStart="@+id/nameEdit" />
+        android:layout_alignLeft="@+id/PnameEdit"
+        android:layout_alignStart="@+id/PnameEdit" />
 
     <EditText
         android:layout_width="247dp"
@@ -105,9 +105,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/emailError"
         android:textColor="?attr/colorAccent"
-        android:layout_below="@+id/emailEdit"
-        android:layout_alignLeft="@+id/emailEdit"
-        android:layout_alignStart="@+id/emailEdit" />
+        android:layout_below="@+id/PemailEdit"
+        android:layout_alignLeft="@+id/PemailEdit"
+        android:layout_alignStart="@+id/PemailEdit" />
 
     <TextView
         android:id="@+id/passError"

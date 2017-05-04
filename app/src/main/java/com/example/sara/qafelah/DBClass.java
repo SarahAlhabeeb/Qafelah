@@ -99,13 +99,21 @@ public class DBClass extends SQLiteOpenHelper {
         db.close();
     }
 
+    private Cursor emailRow(String email ,  SQLiteDatabase db ){
+
+
+
+        Cursor cr = db.rawQuery("SELECT * FROM " + USER_TBL + " WHERE " + EMAIL_COL + " = '" + email + "' ;", null);
+
+        return cr ;
+
+    }
+
     //return true if email exist.
     public boolean isEmailExist(String email) {
 
         SQLiteDatabase db = getWritableDatabase();
-
-        Cursor cr = db.rawQuery("SELECT * FROM " + USER_TBL + " WHERE " + EMAIL_COL + " = '" + email + "' ;", null);
-
+        Cursor cr = emailRow(email , db);
 
         if (cr.getCount() == 0) {
             db.close();
@@ -139,40 +147,81 @@ public class DBClass extends SQLiteOpenHelper {
         return msg;
     }
 
-    public boolean emailCheck(String email) {
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        Cursor cr = db.rawQuery("SELECT * FROM " + USER_TBL + " WHERE " + EMAIL_COL + " = '" + email + "' ;", null);
 
 
-        if (cr.getCount() == 0 ){
+    public String passCheck(String email) {
+
+        String pass = "";
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cr = emailRow(email, db);
+
+        cr.moveToPosition(-1);
+
+        if (cr.moveToNext()) {
+
+            pass = cr.getString(cr.getColumnIndex(PASS_COL));
             db.close();
-            return false;
-        } else {
-            db.close();
-            return true;}
 
+        }
 
+        return pass;
+    }
+
+    public String[] userData(String email){
+
+        String[] row = new String[5] ;
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cr = emailRow(email , db);
+
+        cr.moveToPosition(-1);
+
+        if (cr.moveToNext()) {
+            row[0] = cr.getString(cr.getColumnIndex(NAME_COL));
+            row[1] = cr.getString(cr.getColumnIndex(EMAIL_COL));
+            row[2] = cr.getString(cr.getColumnIndex(PASS_COL));
+            row[3] = cr.getString(cr.getColumnIndex(SCORE_COL));
+            row[4] = cr.getString(cr.getColumnIndex(LEVEL_COL));
+
+        }
+        db.close();
+        return row;
+
+    }
+
+    public int deleteRow(String email){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        int number = db.delete(USER_TBL,EMAIL_COL + " = '" + email + "'", null);
+        db.close();
+
+        return number ;
+    }
+
+    public int updateName(String name , String email){
+
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues updValues = new ContentValues();
+        updValues.put(NAME_COL,name);
+        int number = db.update(USER_TBL,updValues , EMAIL_COL + " = '" + email + "'" , null);
+        db.close();
+
+        return number ;
+    }
+
+    public int updateEmail(String newEmail , String oldEmail){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues updValues = new ContentValues();
+        updValues.put(EMAIL_COL, newEmail);
+        int number = db.update(USER_TBL,updValues , EMAIL_COL + " = '" + oldEmail + "'" , null);
+        db.close();
+
+        return number ;
     }
 
 
 
-    public boolean passCheck(String pass) {
-
-        SQLiteDatabase db = getReadableDatabase();
-
-        Cursor cr = db.rawQuery("SELECT * FROM " + USER_TBL + " WHERE " + PASS_COL + " = '" + pass + "' ;", null);
-
-
-        if (cr.getCount() == 0 ){
-            db.close();
-            return false;
-        } else {
-            db.close();
-            return true;}
-    }
-
-
-        ;}
+        }
 

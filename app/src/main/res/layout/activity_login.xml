@@ -16,7 +16,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/txtEmail"
         android:hint="البريد الإلكتروني"
@@ -27,7 +26,7 @@
         android:textColorHint="@android:color/white"
         android:textAlignment="center"
         android:backgroundTint="@color/white"
-        />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/txtPass"
@@ -39,7 +38,7 @@
         android:layout_marginBottom="38dp"
         android:ems="10"
         android:hint="كلمة المرور"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white"
         android:layout_centerHorizontal="true"

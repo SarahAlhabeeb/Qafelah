@@ -5,14 +5,13 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     EditText nameEdit , emailEdit , passEdit , confirmPassEdit ;
     Button registerBtn ;
@@ -24,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sign_up);
 
 
-        nameEdit = (EditText) findViewById(R.id.nameEdit);
-        emailEdit = (EditText) findViewById(R.id.emailEdit);
+        nameEdit = (EditText) findViewById(R.id.PnameEdit);
+        emailEdit = (EditText) findViewById(R.id.PemailEdit);
         passEdit = (EditText) findViewById(R.id.passEdit);
         confirmPassEdit = (EditText) findViewById(R.id.confirmPassEdit);
 
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 userAccount = getSharedPreferences("UserAccount" , 0) ;
                 SharedPreferences.Editor editor = userAccount.edit() ;
 
-                if(name.equals("") || email.equals("") || pass.equals("")){
+                if(name.isEmpty() || email.isEmpty() || pass.isEmpty()){
                     Toast.makeText(getApplicationContext() ,"بياناتك ناقصة :(" , Toast.LENGTH_LONG).show();
                 } else {
                 emailError.setText("");
@@ -97,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("password" , pass);
                         editor.putInt("score" , 0);
                         editor.putInt("level" , 1);
+                        editor.putBoolean("hasLoggedIn" , true);
                         editor.commit();
 
                     } else {
