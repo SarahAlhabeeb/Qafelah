@@ -3,6 +3,7 @@ package com.example.sara.qafelah;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -14,10 +15,11 @@ import android.widget.Toast;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    TextView score, level;
+    TextView score, level, levelTxt, scoreTxt;
     EditText nameEdit, emailEdit;
     Button signoutBtn, deleteBtn;
     SharedPreferences userAccount;
+    Button menuBtn;
     String oldName, oldEmail, newName, newEmail;
     int UPDATE_NAME = 0, UPDATE_EMAIL = 1, SIGNOUT = 2, DELETE_ACCOUNT = 3;
     DBClass appDB = new DBClass(ProfileActivity.this);
@@ -33,7 +35,9 @@ public class ProfileActivity extends AppCompatActivity {
         emailEdit = (EditText) findViewById(R.id.PemailEdit);
         score = (TextView) findViewById(R.id.PscoreValue);
         level = (TextView) findViewById(R.id.PlevelValue);
-
+        scoreTxt = (TextView) findViewById(R.id.PscoreView);
+        levelTxt = (TextView) findViewById(R.id.PlevelView);
+        menuBtn = (Button) findViewById(R.id.btnmenu);
         signoutBtn = (Button) findViewById(R.id.PsignOutBtn);
         deleteBtn = (Button) findViewById(R.id.PdeleteBtn);
 
@@ -48,6 +52,17 @@ public class ProfileActivity extends AppCompatActivity {
         oldName = nameEdit.getText().toString();
         oldEmail = emailEdit.getText().toString();
 
+        //Changing txt font
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/ithra-light-webfont.ttf");
+        nameEdit.setTypeface(type);
+        emailEdit.setTypeface(type);
+       // score.setTypeface(type);
+        //level.setTypeface(type);
+        scoreTxt.setTypeface(type);
+        levelTxt.setTypeface(type);
+        signoutBtn.setTypeface(type);
+        deleteBtn.setTypeface(type);
+
         nameEdit.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -56,7 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                 if (!(newName.equals(oldName))) {
 
-                    showCostumeDialog("هل تريد تحديث بياناتك ؟", "تحديث", "إلغاء", UPDATE_NAME);
+                    showCostumeDialog("هل تريد تحديث بياناتك؟", "تحديث", "إلغاء", UPDATE_NAME);
 //                  nameEdit.setText(oldName);
 
                 }
@@ -72,7 +87,7 @@ public class ProfileActivity extends AppCompatActivity {
                 newEmail = emailEdit.getText().toString();
 
                 if (!(newEmail.equals(oldEmail))) {
-                    showCostumeDialog("هل تريد تحديث بياناتك ؟", "تحديث", "إلغاء", UPDATE_EMAIL);
+                    showCostumeDialog("هل تريد تحديث بياناتك؟", "تحديث", "إلغاء", UPDATE_EMAIL);
                     // emailEdit.setText(oldEmail);
 
                 }
@@ -84,7 +99,7 @@ public class ProfileActivity extends AppCompatActivity {
         signoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCostumeDialog("أ تريد تسجيل خروجك ؟", "تسجيل الخروج", "إلغاء", SIGNOUT);
+                showCostumeDialog("هل تريد تسجيل خروجك؟", "تسجيل الخروج", "إلغاء", SIGNOUT);
             }
         });
 
@@ -92,11 +107,20 @@ public class ProfileActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showCostumeDialog("أ تريد مغادرة عالم قافلة :( ؟", "حذف حسابي", "إلغاء", DELETE_ACCOUNT);
+                showCostumeDialog("هل أنت متأكد من مغادرة القافلة :( ؟", "حذف حسابي", "إلغاء", DELETE_ACCOUNT);
 
             }
         });
+        menuBtn.setOnClickListener(new View.OnClickListener() {
 
+            public void onClick(View v) {
+                Intent Int = new Intent(getApplicationContext(), Menu.class);
+                startActivity(Int);
+                finish();
+
+            }
+
+        });
 
     }
 
@@ -164,7 +188,6 @@ public class ProfileActivity extends AppCompatActivity {
             }
 
         });
-
     }
 
     public void updateEditorName() {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_profile"
     android:layout_width="match_parent"
@@ -8,7 +9,73 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@mipmap/profilepagebg"
     tools:context="com.example.sara.qafelah.ProfileActivity">
+    <Button
+        android:id="@+id/btnmenu"
+        android:layout_width="20dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="30dp"
+        android:background="@mipmap/menuslider"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp" />
+
+    <ImageView
+        android:id="@+id/imageHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/pic"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/editImageBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        app:srcCompat="@mipmap/editicon"
+        android:background="@android:color/transparent"
+        android:layout_alignBottom="@+id/imageHolder"
+        android:layout_alignRight="@+id/imageHolder"
+        android:layout_alignEnd="@+id/imageHolder" />
+
+    <TextView
+        android:id="@+id/PscoreValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24.0sp"
+        android:layout_centerVertical="true"
+        android:layout_alignRight="@+id/imageHolder"
+        android:layout_alignEnd="@+id/imageHolder"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp" />
+
+    <TextView
+        android:id="@+id/PlevelValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24.0sp"
+        android:layout_alignBaseline="@+id/PscoreValue"
+        android:layout_alignBottom="@+id/PscoreValue"
+        android:layout_toLeftOf="@+id/imageHolder"
+        android:layout_toStartOf="@+id/imageHolder" />
+
+    <TextView
+        android:id="@+id/PlevelView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="المستوى"
+        android:layout_below="@+id/PscoreValue"
+        android:layout_alignLeft="@+id/editImageBtn"
+        android:layout_alignStart="@+id/editImageBtn"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp" />
+
 
     <TextView
         android:id="@+id/PscoreView"
@@ -17,18 +84,30 @@
         android:text="عدد النقاط"
         android:layout_alignBaseline="@+id/PlevelView"
         android:layout_alignBottom="@+id/PlevelView"
-        android:layout_toLeftOf="@+id/PtextView"
-        android:layout_toStartOf="@+id/PtextView" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="73dp"
+        android:layout_marginStart="73dp" />
 
-    <TextView
-        android:id="@+id/PtextView2"
+    <ImageView
+        android:id="@+id/usernameIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="البريد الالكتروني"
-        android:layout_marginTop="65dp"
-        android:layout_below="@+id/PtextView"
-        android:layout_alignLeft="@+id/PtextView"
-        android:layout_alignStart="@+id/PtextView" />
+        app:srcCompat="@mipmap/username"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/PlevelView"
+        android:layout_alignLeft="@+id/PlevelView"
+        android:layout_alignStart="@+id/PlevelView" />
+
+    <ImageView
+        android:id="@+id/emailIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/email"
+        android:layout_marginTop="43dp"
+        android:layout_below="@+id/usernameIcon"
+        android:layout_alignRight="@+id/usernameIcon"
+        android:layout_alignEnd="@+id/usernameIcon" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -36,8 +115,10 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/PnameEdit"
-        android:layout_below="@+id/PtextView"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/PscoreView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -45,68 +126,27 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/PemailEdit"
-        android:layout_below="@+id/PtextView2"
-        android:layout_alignLeft="@+id/PnameEdit"
-        android:layout_alignStart="@+id/PnameEdit" />
-
-    <TextView
-        android:id="@+id/PtextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:text="اسم المستخدم"
-        android:layout_below="@+id/PscoreView"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/PnameEdit"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp" />
 
     <Button
-        android:text="حذف الحساب"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:id="@+id/PdeleteBtn"
-        android:layout_below="@+id/PsignOutBtn"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:id="@+id/PlevelView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="137dp"
-        android:text="المستوى"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/PtextView"
-        android:layout_toEndOf="@+id/PtextView" />
-
-    <Button
-        android:text="تسجيل الخروج"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
         android:id="@+id/PsignOutBtn"
+        android:layout_width="90dp"
+        android:layout_height="18dp"
+        android:background="@mipmap/signout"
         android:layout_below="@+id/PemailEdit"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/PscoreValue"
-        android:layout_marginBottom="25dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_above="@+id/PscoreView"
-        android:layout_toLeftOf="@+id/PsignOutBtn"
-        android:layout_toStartOf="@+id/PsignOutBtn" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/PlevelValue"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_alignBaseline="@+id/PscoreValue"
-        android:layout_alignBottom="@+id/PscoreValue"
-        android:layout_toRightOf="@+id/PsignOutBtn"
-        android:layout_toEndOf="@+id/PsignOutBtn" />
-
+        android:layout_toLeftOf="@+id/PlevelView"
+        android:layout_toStartOf="@+id/PlevelView"
+        android:layout_marginTop="28dp" />
+    <Button
+        android:id="@+id/PdeleteBtn"
+        android:layout_width="90dp"
+        android:layout_height="18dp"
+        android:background="@mipmap/delete"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
 
 </RelativeLayout>
