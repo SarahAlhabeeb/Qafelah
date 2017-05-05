@@ -49,20 +49,19 @@
         android:layout_height="wrap_content"
         android:textSize="24.0sp"
         android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/imageHolder"
-        android:layout_alignEnd="@+id/imageHolder"
-        android:layout_marginRight="13dp"
-        android:layout_marginEnd="13dp" />
+        android:layout_alignLeft="@+id/imageHolder"
+        android:layout_alignStart="@+id/imageHolder" />
 
     <TextView
         android:id="@+id/PlevelValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="24.0sp"
-        android:layout_alignBaseline="@+id/PscoreValue"
-        android:layout_alignBottom="@+id/PscoreValue"
-        android:layout_toLeftOf="@+id/imageHolder"
-        android:layout_toStartOf="@+id/imageHolder" />
+        android:layout_above="@+id/PlevelView"
+        android:layout_alignLeft="@+id/PlevelView"
+        android:layout_alignStart="@+id/PlevelView"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
 
     <TextView
         android:id="@+id/PlevelView"
@@ -118,7 +117,8 @@
         android:layout_below="@+id/PscoreView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/white"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -126,10 +126,11 @@
         android:inputType="textEmailAddress"
         android:ems="10"
         android:id="@+id/PemailEdit"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/white"
         android:layout_below="@+id/PnameEdit"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/PsignOutBtn"

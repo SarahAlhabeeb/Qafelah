@@ -8,28 +8,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.app.AlertDialog;
 
 public class MainPageActivity extends AppCompatActivity {
     Button startBtn;
     Button menuBtn, game1;
-    SharedPreferences userAccount ;
+    SharedPreferences userAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
+        overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+
         menuBtn= (Button) findViewById(R.id.btnmenu);
         startBtn= (Button) findViewById(R.id.btnstart);
         game1= (Button) findViewById(R.id.game1);
-
-
-        //startTxt = (TextView) findViewById(R.id.start);
-        //Typeface type = Typeface.createFromAsset(getAssets(), "fonts/ithra-light-webfont.ttf");
-        //startTxt.setTypeface(type);
 
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/ithra-light-webfont.ttf");
         startBtn.setTypeface(type);
@@ -48,6 +44,7 @@ public class MainPageActivity extends AppCompatActivity {
             }
 
         });
+
         game1.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {

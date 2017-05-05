@@ -6,10 +6,16 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static com.example.sara.qafelah.R.id.confirmPassEdit;
+import static com.example.sara.qafelah.R.id.passEdit;
+import static com.example.sara.qafelah.R.id.signUpTxt;
+import static com.example.sara.qafelah.R.id.txtPass;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,7 +44,14 @@ public class LoginActivity extends AppCompatActivity {
         passEd.setTypeface(type);
         txtV.setTypeface(type2);
 
-        login.animate();
+        //To add animation
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+        alphaAnimation.setDuration(700);
+        alphaAnimation.setRepeatCount(0);
+        login.findViewById(R.id.btnLogin).startAnimation(alphaAnimation);
+        emailEd.findViewById(R.id.txtEmail).startAnimation(alphaAnimation);
+        passEd.findViewById(txtPass).startAnimation(alphaAnimation);
+        txtV.findViewById(signUpTxt).startAnimation(alphaAnimation);
 
 
         appDB = new DBClass(this);

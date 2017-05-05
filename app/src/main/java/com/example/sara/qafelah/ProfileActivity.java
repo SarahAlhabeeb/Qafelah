@@ -56,8 +56,8 @@ public class ProfileActivity extends AppCompatActivity {
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/ithra-light-webfont.ttf");
         nameEdit.setTypeface(type);
         emailEdit.setTypeface(type);
-       // score.setTypeface(type);
-        //level.setTypeface(type);
+        score.setTypeface(type);
+        level.setTypeface(type);
         scoreTxt.setTypeface(type);
         levelTxt.setTypeface(type);
         signoutBtn.setTypeface(type);
@@ -142,6 +142,11 @@ public class ProfileActivity extends AppCompatActivity {
         msgView.setText(msg);
         yesBtn.setText(yesMsg);
         noBtn.setText(noMsg);
+
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/ithra-light-webfont.ttf");
+        msgView.setTypeface(type);
+        yesBtn.setTypeface(type);
+        noBtn.setTypeface(type);
 
         //when user clicks ok button, ensure if Dialog is for delete account or update or signout
         yesBtn.setOnClickListener(new View.OnClickListener() {

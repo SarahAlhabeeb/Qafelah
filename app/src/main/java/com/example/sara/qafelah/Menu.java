@@ -16,6 +16,8 @@ public class Menu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        overridePendingTransition(R.anim.enter_from_left, R.anim.exit_to_right);
+
         profileBtn = (Button) findViewById(R.id.btnProfile);
         aboutBtn = (Button) findViewById(R.id.btnAbout);
         menuB=(Button) findViewById(R.id.menub);

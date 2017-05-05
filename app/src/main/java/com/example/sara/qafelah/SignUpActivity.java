@@ -6,6 +6,8 @@ import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -34,7 +36,19 @@ public class SignUpActivity extends AppCompatActivity {
         registerBtn = (Button) findViewById(R.id.RegisterBtn);
         logView = (TextView) findViewById(R.id.loginView);
         emailError = (TextView) findViewById(R.id.emailError) ;
-        passError = (TextView) findViewById(R.id.passError) ;
+        passError = (TextView) findViewById(R.id.passError);
+
+        //To add animation
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+        alphaAnimation.setDuration(700);
+        alphaAnimation.setRepeatCount(0);
+        nameEdit.findViewById(R.id.PnameEdit).startAnimation(alphaAnimation);
+        emailEdit.findViewById(R.id.PemailEdit).startAnimation(alphaAnimation);
+        passEdit.findViewById(R.id.passEdit).startAnimation(alphaAnimation);
+        confirmPassEdit.findViewById(R.id.confirmPassEdit).startAnimation(alphaAnimation);
+        registerBtn.findViewById(R.id.RegisterBtn).startAnimation(alphaAnimation);
+        logView.findViewById(R.id.loginView).startAnimation(alphaAnimation);
+
 
         //To change the font
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/ithra-light-webfont.ttf");
