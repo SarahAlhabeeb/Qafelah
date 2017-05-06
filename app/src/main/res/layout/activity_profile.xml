@@ -41,7 +41,8 @@
         android:background="@android:color/transparent"
         android:layout_alignBottom="@+id/imageHolder"
         android:layout_alignRight="@+id/imageHolder"
-        android:layout_alignEnd="@+id/imageHolder" />
+        android:layout_alignEnd="@+id/imageHolder"
+        android:onClick="browseImage"/>
 
     <TextView
         android:id="@+id/PscoreValue"
