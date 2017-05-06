@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -249,10 +250,19 @@ public class Level1 extends AppCompatActivity {
         thirdBuilder.setTitle(questions[index])
                 .setMessage(hint[index]);
 
-        thirdBuilder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+        thirdBuilder.setOnKeyListener(new DialogInterface.OnKeyListener() {
+
             @Override
-            public void onCancel(DialogInterface dialog) {
-                showSecondDialog();
+            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+
+                if(keyCode == KeyEvent.KEYCODE_BACK){
+                    showSecondDialog();
+                    dialog.dismiss();
+                    return true;
+                }
+                return false;
+
+
             }
         });
 
