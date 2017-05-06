@@ -15,6 +15,7 @@ public class MainPageActivity extends AppCompatActivity {
     Button startBtn;
     Button menuBtn, game1;
     SharedPreferences userAccount;
+    int level ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +32,12 @@ public class MainPageActivity extends AppCompatActivity {
         startBtn.setTypeface(type);
         userAccount = getSharedPreferences("UserAccount" , 0) ;
 
-        Toast.makeText(getApplicationContext(), userAccount.getString("email" ,null),Toast.LENGTH_LONG).show();
+//        Toast.makeText(getApplicationContext(), userAccount.getString("email" ,null),Toast.LENGTH_LONG).show();
 
+      //  Toast.makeText(getApplicationContext(), new DBClass(MainPageActivity.this).showQuestionTable(),Toast.LENGTH_LONG).show();
+
+
+        level = getSharedPreferences("UserAccount" , 0).getInt("level" , 0);
 
         menuBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -48,17 +53,23 @@ public class MainPageActivity extends AppCompatActivity {
         game1.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainPageActivity.this);
-                builder.setMessage("عليك إكمال المراحل المسبقة أولًا")
-                        .setCancelable(false)
-                        .setPositiveButton("موافق", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                //do things
-                            }
-                        });
-                AlertDialog alert = builder.create();
-                alert.show();
 
+                if(level >= 1){
+                    startActivity(new Intent(MainPageActivity.this , Level1.class));
+                }
+                else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainPageActivity.this);
+                    builder.setMessage("عليك إكمال المراحل المسبقة أولًا")
+                            .setCancelable(false)
+                            .setPositiveButton("موافق", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    //do things
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+
+                }
             }
 
         });

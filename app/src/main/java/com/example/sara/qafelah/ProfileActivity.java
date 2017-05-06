@@ -200,13 +200,13 @@ public class ProfileActivity extends AppCompatActivity {
         userAccount = getSharedPreferences("UserAccount", 0);
         SharedPreferences.Editor editor = userAccount.edit();
 
-        Toast.makeText(ProfileActivity.this, "1 \n" + appDB.showDB(), Toast.LENGTH_LONG).show();
+        Toast.makeText(ProfileActivity.this, "1 \n" + appDB.showUserTable(), Toast.LENGTH_LONG).show();
 
         //call update name method
         if (appDB.updateName(newName, emailEdit.getText().toString()) > 0) {
             editor.putString("name", newName);
             editor.commit();
-            Toast.makeText(ProfileActivity.this, "2 \n" + appDB.showDB(), Toast.LENGTH_LONG).show();
+            Toast.makeText(ProfileActivity.this, "2 \n" + appDB.showUserTable(), Toast.LENGTH_LONG).show();
             Toast.makeText(ProfileActivity.this, "تم التحديث بنجاح", Toast.LENGTH_LONG).show();
 
         }
