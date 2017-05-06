@@ -21,8 +21,6 @@ public class MainPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-
         menuBtn= (Button) findViewById(R.id.btnmenu);
         startBtn= (Button) findViewById(R.id.btnstart);
         game1= (Button) findViewById(R.id.game1);

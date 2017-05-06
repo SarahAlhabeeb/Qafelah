@@ -58,7 +58,6 @@ public class Level1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
-
         userData = getSharedPreferences("UserAccount" , 0) ;
         final SharedPreferences.Editor editor = userData.edit() ;
         score = userData.getInt("score", 0);
