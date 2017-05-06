@@ -1,0 +1,10 @@
+int attr bvMaxTileSize 0x7f010000
+int attr tbvTileBackground 0x7f010001
+int color pressed_tile 0x7f030000
+int color selected_tile 0x7f030001
+int dimen max_tile_size 0x7f040000
+int drawable letter_tile_background 0x7f020000
+int[] styleable boardview { 0x7f010000 }
+int styleable boardview_bvMaxTileSize 0
+int[] styleable tiledboardview { 0x7f010001 }
+int styleable tiledboardview_tbvTileBackground 0
