@@ -2,6 +2,7 @@ package com.example.sara.qafelah;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,7 +31,8 @@ public class Level1 extends AppCompatActivity {
     Random rand;
     int randomNo1, randomNo2;
     String word;
-    int score = 0;
+    int score ;
+    int level ;
     ImageView[] imageArray;
     final int NUMBER_OF_QUESTIONS = 5;
     ImageButton hintBtn;
@@ -47,6 +49,7 @@ public class Level1 extends AppCompatActivity {
     String[] answers ;
     String[] hint ;
     DBClass db ;
+    SharedPreferences userData ;
 
 
 
@@ -54,6 +57,12 @@ public class Level1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
+
+        userData = getSharedPreferences("UserAccount" , 0) ;
+        final SharedPreferences.Editor editor = userData.edit() ;
+        score = userData.getInt("score", 0);
+        level = userData.getInt("level", 0) ;
+
 
         boardView = (WordSearchBoardView) findViewById(R.id.board_view);
         hintBtn = (ImageButton) findViewById(R.id.hintImgBtn);
@@ -159,6 +168,12 @@ public class Level1 extends AppCompatActivity {
                         Dscore.setText(score + "");
                         Button toMainBtnD = (Button) DView.findViewById(R.id.goToMainBtn);
                         Button toNextLevel = (Button) DView.findViewById(R.id.goToNextBtn);
+
+                        editor.putInt("score" , score);
+                        level++ ;
+                        editor.putInt("level" , level);
+                        editor.commit();
+
 
                         toNextLevel.setOnClickListener(new View.OnClickListener() {
 
