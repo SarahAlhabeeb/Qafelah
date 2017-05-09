@@ -69,12 +69,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="المستوى"
+        android:textSize="22.0sp"
         android:layout_below="@+id/PscoreValue"
-        android:layout_alignLeft="@+id/editImageBtn"
-        android:layout_alignStart="@+id/editImageBtn"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="12dp" />
+        android:layout_toRightOf="@+id/PdeleteBtn"
+        android:layout_toEndOf="@+id/PdeleteBtn" />
 
 
     <TextView
@@ -82,6 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="عدد النقاط"
+        android:textSize="22.0sp"
         android:layout_alignBaseline="@+id/PlevelView"
         android:layout_alignBottom="@+id/PlevelView"
         android:layout_alignParentLeft="true"

@@ -45,7 +45,8 @@
         android:background="@android:color/transparent"
         android:layout_above="@+id/btnstart"
         android:layout_centerHorizontal="true"
-        android:textSize="15sp"/>
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/game2"
@@ -54,10 +55,11 @@
         android:layout_marginBottom="21dp"
         android:text="٢"
         android:background="@android:color/transparent"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:layout_above="@+id/game1"
         android:layout_alignLeft="@+id/game1"
-        android:layout_alignStart="@+id/game1" />
+        android:layout_alignStart="@+id/game1"
+        android:textColor="@color/white"/>
     <Button
         android:id="@+id/game3"
         android:layout_width="26dp"
@@ -65,10 +67,11 @@
         android:layout_marginBottom="25dp"
         android:text="٣"
         android:background="@android:color/transparent"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:layout_above="@+id/game2"
         android:layout_alignLeft="@+id/game2"
-        android:layout_alignStart="@+id/game2" />
+        android:layout_alignStart="@+id/game2"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/game4"
@@ -77,10 +80,11 @@
         android:layout_marginBottom="24dp"
         android:text="٤"
         android:background="@android:color/transparent"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:layout_above="@+id/game3"
         android:layout_alignLeft="@+id/game3"
-        android:layout_alignStart="@+id/game3" />
+        android:layout_alignStart="@+id/game3"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/game5"
@@ -89,10 +93,11 @@
         android:layout_marginBottom="24dp"
         android:text="٥"
         android:background="@android:color/transparent"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:layout_above="@+id/game4"
         android:layout_alignLeft="@+id/game4"
-        android:layout_alignStart="@+id/game4" />
+        android:layout_alignStart="@+id/game4"
+        android:textColor="@color/white"/>
     <Button
         android:id="@+id/game6"
         android:layout_width="26dp"
@@ -100,10 +105,11 @@
         android:layout_marginBottom="23dp"
         android:text="٦"
         android:background="@android:color/transparent"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:layout_above="@+id/game5"
         android:layout_alignLeft="@+id/game5"
-        android:layout_alignStart="@+id/game5" />
+        android:layout_alignStart="@+id/game5"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/game7"
@@ -115,7 +121,8 @@
         android:layout_marginBottom="23dp"
         android:background="@android:color/transparent"
         android:text="٧"
-        android:textSize="15sp" />
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/game8"
@@ -127,7 +134,8 @@
         android:layout_marginBottom="23dp"
         android:background="@android:color/transparent"
         android:text="٨"
-        android:textSize="15sp" />
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
 
 
 </RelativeLayout>

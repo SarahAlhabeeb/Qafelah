@@ -23,7 +23,7 @@
         android:layout_below="@+id/Q3View"
         android:layout_alignRight="@+id/board_view"
         android:layout_alignEnd="@+id/board_view"
-        android:textColor="@color/Black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         android:background="@color/Grey"/>
 
@@ -35,7 +35,7 @@
         android:layout_below="@+id/Q4View"
         android:layout_alignRight="@+id/board_view"
         android:layout_alignEnd="@+id/board_view"
-        android:textColor="@color/Black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         android:background="@color/Grey"/>
 
@@ -48,7 +48,7 @@
         android:layout_alignTop="@+id/Q1View"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textColor="@color/Black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         android:background="@color/Grey"/>
 
@@ -61,7 +61,7 @@
         android:layout_below="@+id/board_view"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textColor="@color/Black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
         android:background="@color/Grey"/>
 
@@ -73,7 +73,7 @@
         android:layout_below="@+id/Q2View"
         android:background="@color/Grey"
         android:text=""
-        android:textColor="@color/Black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp" />
 
     <ImageView
@@ -179,5 +179,14 @@
         boardview:srcCompat="@mipmap/score"
         android:layout_alignLeft="@+id/scoreView"
         android:layout_alignStart="@+id/scoreView" />
+
+    <ImageView
+        android:id="@+id/correctSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        boardview:srcCompat="@drawable/correctsign"
+        android:layout_alignBottom="@+id/board_view"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp" />
 
 </RelativeLayout>

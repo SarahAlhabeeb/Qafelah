@@ -9,6 +9,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -27,6 +29,7 @@ public class Level1 extends AppCompatActivity {
 
     WordSearchBoardView boardView;
     TextView q1View, q2View, q3View, q4View, q5View, scoreView;
+    ImageView correctSign;
     int count = 0;
     EncouragingWords obj;
     Random rand;
@@ -75,7 +78,8 @@ public class Level1 extends AppCompatActivity {
         q5View = (TextView) findViewById(R.id.Q5View);
         imageArray = new ImageView[]{(ImageView) findViewById(R.id.imageViewQ1), (ImageView) findViewById(R.id.imageViewQ2),
                 (ImageView) findViewById(R.id.imageViewQ3), (ImageView) findViewById(R.id.imageViewQ4), (ImageView) findViewById(R.id.imageViewQ5)};
-
+        correctSign =(ImageView) findViewById(R.id.correctSign);
+        correctSign.setVisibility(View.INVISIBLE);
 
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/ithra-light-webfont.ttf");
         scoreView.setTypeface(type);
@@ -84,6 +88,7 @@ public class Level1 extends AppCompatActivity {
         q3View.setTypeface(type);
         q4View.setTypeface(type);
         q5View.setTypeface(type);
+
 
 
         //Disappear imageView that appear when user answer question.
@@ -156,8 +161,34 @@ public class Level1 extends AppCompatActivity {
                     // استخراج جملة عشوائية من EncouragingWords class
                     randomNo1 = rand.nextInt(obj.words4EachAnswer.length);
                     word = obj.words4EachAnswer[randomNo1];
+                    //Toast.makeText(getApplicationContext(), word, Toast.LENGTH_LONG).show();
 
-                    Toast.makeText(getApplicationContext(), word, Toast.LENGTH_LONG).show();
+                    //To show the correct sign image
+                    correctSign.setVisibility(View.VISIBLE);
+                    AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+                    alphaAnimation.setDuration(500);
+                    alphaAnimation.setRepeatCount(1);
+                    alphaAnimation.setRepeatMode(Animation.REVERSE);
+                    correctSign.findViewById(R.id.correctSign).startAnimation(alphaAnimation);
+                    correctSign.setVisibility(View.INVISIBLE);
+
+                    alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+                            //TODO: Run when animation start
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            //TODO: Run when animation end
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+                            //TODO: Run when animation repeat
+                        }
+                    });
+
                     score++;
                     scoreView.setText(score + "");
                     count++;
