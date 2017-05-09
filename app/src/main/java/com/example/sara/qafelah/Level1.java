@@ -3,11 +3,14 @@ package com.example.sara.qafelah;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -26,6 +29,7 @@ public class Level1 extends AppCompatActivity {
 
     WordSearchBoardView boardView;
     TextView q1View, q2View, q3View, q4View, q5View, scoreView;
+    ImageView correctSign;
     int count = 0;
     EncouragingWords obj;
     Random rand;
@@ -35,7 +39,7 @@ public class Level1 extends AppCompatActivity {
     int level ;
     ImageView[] imageArray;
     final int NUMBER_OF_QUESTIONS = 5;
-    ImageButton hintBtn;
+    ImageButton hintBtn, backBtn;
     boolean isHintClick = false;
     boolean isAnswerCorrect = false;
     String randomQuestion;
@@ -57,7 +61,6 @@ public class Level1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_layout);
-
         userData = getSharedPreferences("UserAccount" , 0) ;
         final SharedPreferences.Editor editor = userData.edit() ;
         score = userData.getInt("score", 0);
@@ -66,6 +69,7 @@ public class Level1 extends AppCompatActivity {
 
         boardView = (WordSearchBoardView) findViewById(R.id.board_view);
         hintBtn = (ImageButton) findViewById(R.id.hintImgBtn);
+        backBtn = (ImageButton) findViewById(R.id.backButton);
         scoreView = (TextView) findViewById(R.id.scoreView);
         q1View = (TextView) findViewById(R.id.Q1View);
         q2View = (TextView) findViewById(R.id.Q2View);
@@ -74,6 +78,18 @@ public class Level1 extends AppCompatActivity {
         q5View = (TextView) findViewById(R.id.Q5View);
         imageArray = new ImageView[]{(ImageView) findViewById(R.id.imageViewQ1), (ImageView) findViewById(R.id.imageViewQ2),
                 (ImageView) findViewById(R.id.imageViewQ3), (ImageView) findViewById(R.id.imageViewQ4), (ImageView) findViewById(R.id.imageViewQ5)};
+        correctSign =(ImageView) findViewById(R.id.correctSign);
+        correctSign.setVisibility(View.INVISIBLE);
+
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/ithra-light-webfont.ttf");
+        scoreView.setTypeface(type);
+        q1View.setTypeface(type);
+        q2View.setTypeface(type);
+        q3View.setTypeface(type);
+        q4View.setTypeface(type);
+        q5View.setTypeface(type);
+
+
 
         //Disappear imageView that appear when user answer question.
         for (int i = 0; i < imageArray.length; i++) {
@@ -123,6 +139,15 @@ public class Level1 extends AppCompatActivity {
             }
         });
 
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Go back to main page
+                Intent Int = new Intent(getApplicationContext(), MainPageActivity.class);
+                startActivity(Int);
+            }
+        });
+
 
 //Sets the listener for when a word is selected by the user
         boardView.setOnWordSelectedListener(new WordSearchBoardView.OnWordSelectedListener() {
@@ -136,8 +161,34 @@ public class Level1 extends AppCompatActivity {
                     // استخراج جملة عشوائية من EncouragingWords class
                     randomNo1 = rand.nextInt(obj.words4EachAnswer.length);
                     word = obj.words4EachAnswer[randomNo1];
+                    //Toast.makeText(getApplicationContext(), word, Toast.LENGTH_LONG).show();
 
-                    Toast.makeText(getApplicationContext(), word, Toast.LENGTH_LONG).show();
+                    //To show the correct sign image
+                    correctSign.setVisibility(View.VISIBLE);
+                    AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+                    alphaAnimation.setDuration(500);
+                    alphaAnimation.setRepeatCount(1);
+                    alphaAnimation.setRepeatMode(Animation.REVERSE);
+                    correctSign.findViewById(R.id.correctSign).startAnimation(alphaAnimation);
+                    correctSign.setVisibility(View.INVISIBLE);
+
+                    alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+                            //TODO: Run when animation start
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            //TODO: Run when animation end
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+                            //TODO: Run when animation repeat
+                        }
+                    });
+
                     score++;
                     scoreView.setText(score + "");
                     count++;
@@ -221,6 +272,7 @@ public class Level1 extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         if (selection.equals(choices[correctAnswerIndex])) {
                             msg = "إجابتك صحيحة، أحسنت بارك الله فيك";
+
                             isAnswerCorrect = true ;
 
                         } else {

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.example.sara.qafelah"
+        applicationId "com.example.sarah.lab9"
         minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
@@ -27,5 +27,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     testCompile 'junit:junit:4.12'
-    compile project(':boardview');
+    compile project(path: ':boardview')
+    compile project(path: ':boardview')
 }
