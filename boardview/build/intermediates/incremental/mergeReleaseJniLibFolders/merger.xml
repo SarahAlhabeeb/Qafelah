@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/lamees/AndroidStudioProjects/Qafelah/boardview/src/main/jniLibs"/></dataSet><dataSet config="release"><source path="/Users/lamees/AndroidStudioProjects/Qafelah/boardview/src/release/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/mac/AndroidStudioProjects/QafelahWithDesgin/boardview/src/main/jniLibs"/></dataSet><dataSet config="release"><source path="/Users/mac/AndroidStudioProjects/QafelahWithDesgin/boardview/src/release/jniLibs"/></dataSet></merger>

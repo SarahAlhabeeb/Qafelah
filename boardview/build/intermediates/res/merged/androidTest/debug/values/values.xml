@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="pressed_tile">#a3e9a4</color>
-    <color name="selected_tile">#2baf2b</color>
+    <color name="pressed_tile">#F5CDCD</color>
+    <color name="selected_tile">#09C6AB</color>
     <declare-styleable name="boardview"><attr format="dimension" name="bvMaxTileSize"/></declare-styleable>
     <declare-styleable name="tiledboardview"><attr format="reference" name="tbvTileBackground"/></declare-styleable>
     <dimen name="max_tile_size">48dp</dimen>
