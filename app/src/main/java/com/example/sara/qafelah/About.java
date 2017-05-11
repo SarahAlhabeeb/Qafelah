@@ -27,7 +27,7 @@ public class About extends AppCompatActivity {
                 "حياة النبي ﷺ، ومن خلال الأسئلة والتلميحات\n" +
                 " التي يقدمها التطبيق ستزداد معرفة المستخدم\n" +
                 " بسيرة نبيه، وسيصبح أكثر ارتباطا وحبا بها حيث \n" +
-                "يقوم التطبيق بتذكيره يوميا بدخول التطبيق لحل مرحلة يوميا! \n");
+                "يقوم التطبيق بتذكيره بدخول التطبيق لحل مرحلة يوميا. \n");
 
         //To change the font
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/AlNile.ttc");

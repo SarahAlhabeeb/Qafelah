@@ -81,7 +81,7 @@ public class Level1 extends AppCompatActivity {
         correctSign =(ImageView) findViewById(R.id.correctSign);
         correctSign.setVisibility(View.INVISIBLE);
 
-        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/ithra-light-webfont.ttf");
+        Typeface type = Typeface.createFromAsset(getAssets(),"fonts/A-Noor.ttf");
         scoreView.setTypeface(type);
         q1View.setTypeface(type);
         q2View.setTypeface(type);

@@ -24,8 +24,8 @@
         android:layout_alignRight="@+id/board_view"
         android:layout_alignEnd="@+id/board_view"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        android:background="@color/Grey"/>
+        android:textSize="15sp"
+        android:background="@color/white"/>
 
     <TextView
         android:text=""
@@ -36,8 +36,8 @@
         android:layout_alignRight="@+id/board_view"
         android:layout_alignEnd="@+id/board_view"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        android:background="@color/Grey"/>
+        android:textSize="18sp"
+        android:background="@color/white"/>
 
     <TextView
         android:text=""
@@ -49,8 +49,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        android:background="@color/Grey"/>
+        android:textSize="18sp"
+        android:background="@color/white"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -62,8 +62,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp"
-        android:background="@color/Grey"/>
+        android:textSize="18sp"
+        android:background="@color/white"/>
 
     <TextView
         android:id="@+id/Q3View"
@@ -71,10 +71,10 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/board_view"
         android:layout_below="@+id/Q2View"
-        android:background="@color/Grey"
+        android:background="@color/white"
         android:text=""
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
 
     <ImageView
         android:layout_width="match_parent"

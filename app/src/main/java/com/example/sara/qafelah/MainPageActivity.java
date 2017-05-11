@@ -58,7 +58,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                if(level == 1){
+                if(level == 1 || level > 1){
                     startActivity(new Intent(MainPageActivity.this , Level1.class));
                 }
                 else {
@@ -73,7 +73,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                if(level == 2){
+                if(level == 2 || level > 2){
                     startActivity(new Intent(MainPageActivity.this , Level1.class));
                 }
                 else {
@@ -88,7 +88,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                if(level == 3){
+                if(level == 3 || level > 3){
                     startActivity(new Intent(MainPageActivity.this , Level1.class));
                 }
                 else {
@@ -103,7 +103,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                if(level == 4){
+                if(level == 4 || level > 4){
                     startActivity(new Intent(MainPageActivity.this , Level1.class));
                 }
                 else {
@@ -118,7 +118,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                if(level == 5){
+                if(level == 5 || level > 5){
                     startActivity(new Intent(MainPageActivity.this , Level1.class));
                 }
                 else {
@@ -133,7 +133,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                if(level == 6){
+                if(level == 6 || level > 6){
                     startActivity(new Intent(MainPageActivity.this , Level1.class));
                 }
                 else {
@@ -148,7 +148,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                if(level == 7){
+                if(level == 7 || level > 7){
                     startActivity(new Intent(MainPageActivity.this , Level1.class));
                 }
                 else {
@@ -163,7 +163,7 @@ public class MainPageActivity extends AppCompatActivity {
 
             public void onClick(View v) {
 
-                if(level == 8){
+                if(level == 8 || level > 8){
                     startActivity(new Intent(MainPageActivity.this , Level1.class));
                 }
                 else {
