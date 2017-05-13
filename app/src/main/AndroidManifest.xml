@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sara.qafelah">
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/qafelahicon"
@@ -22,7 +24,9 @@
         </activity>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".Level1" />
-        <activity android:name=".Level2"></activity>
+        <activity android:name=".Level2" />
+        <activity android:name=".Level3" />
+        <activity android:name=".Level4"></activity>
     </application>
 
 </manifest>

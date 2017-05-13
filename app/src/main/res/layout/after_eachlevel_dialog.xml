@@ -8,7 +8,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
-        android:id="@+id/DWordsView" />
+        android:id="@+id/DWordsView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,27 +18,34 @@
         android:layout_marginTop="29dp"
         android:id="@+id/DScoreView"
         android:layout_below="@+id/DWordsView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"/>
 
     <Button
         android:text="مواصلة السير"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="41dp"
         android:id="@+id/goToNextBtn"
+        android:background="@mipmap/signbtn"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_below="@+id/DScoreView"
         android:layout_toRightOf="@+id/goToMainBtn"
         android:layout_toEndOf="@+id/goToMainBtn" />
 
     <Button
         android:text="إلى الراحلة"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
         android:id="@+id/goToMainBtn"
-        android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp"
-        android:layout_alignBaseline="@+id/goToNextBtn"
-        android:layout_alignBottom="@+id/goToNextBtn"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:background="@mipmap/signbtn"
+        android:textColor="@android:color/white"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/goToNextBtn" />
 </RelativeLayout>

@@ -74,7 +74,7 @@ public class MainPageActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(level == 2 || level > 2){
-                    startActivity(new Intent(MainPageActivity.this , Level1.class));
+                    startActivity(new Intent(MainPageActivity.this , Level2.class));
                 }
                 else {
                     warningMessage();
@@ -89,7 +89,7 @@ public class MainPageActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if(level == 3 || level > 3){
-                    startActivity(new Intent(MainPageActivity.this , Level1.class));
+                    startActivity(new Intent(MainPageActivity.this , Level3.class));
                 }
                 else {
                     warningMessage();

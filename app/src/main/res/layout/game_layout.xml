@@ -16,6 +16,40 @@
 
 
     <TextView
+        android:id="@+id/Q1View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/board_view"
+        android:layout_marginTop="20dp"
+        android:text=""
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Q2View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/Q1View"
+        android:layout_marginTop="21dp"
+        android:text=""
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Q3View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/board_view"
+        android:layout_below="@+id/Q2View"
+        android:text=""
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp" />
+
+    <TextView
         android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,8 +58,7 @@
         android:layout_alignRight="@+id/board_view"
         android:layout_alignEnd="@+id/board_view"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"
-        android:background="@color/white"/>
+        android:textSize="15sp" />
 
     <TextView
         android:text=""
@@ -36,45 +69,7 @@
         android:layout_alignRight="@+id/board_view"
         android:layout_alignEnd="@+id/board_view"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:background="@color/white"/>
-
-    <TextView
-        android:text=""
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Q2View"
-        android:layout_marginTop="17dp"
-        android:layout_alignTop="@+id/Q1View"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:background="@color/white"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Q1View"
-        android:text=""
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/board_view"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:background="@color/white"/>
-
-    <TextView
-        android:id="@+id/Q3View"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/board_view"
-        android:layout_below="@+id/Q2View"
-        android:background="@color/white"
-        android:text=""
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp" />
+        android:textSize="17sp"/>
 
     <ImageView
         android:layout_width="match_parent"

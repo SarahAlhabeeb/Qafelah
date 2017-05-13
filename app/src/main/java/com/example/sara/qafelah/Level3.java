@@ -24,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class Level2 extends AppCompatActivity {
+public class Level3 extends AppCompatActivity {
 
 
     WordSearchBoardView boardView;
@@ -96,7 +96,7 @@ public class Level2 extends AppCompatActivity {
             imageArray[i].setVisibility(View.INVISIBLE);
         }
 
-        db = new DBClass(Level2.this) ;
+        db = new DBClass(Level3.this) ;
         rand = new Random();
         obj = new EncouragingWords();
         //this code will change in higher levels
@@ -104,9 +104,9 @@ public class Level2 extends AppCompatActivity {
         choices = new String[]{"محمد صلى الله عليه وسلم", "عيسى ابن مريم عليه السلام", "موسى عليه السلام"};
         correctAnswerIndex = 0;
 
-        questions = DBClass.questionsL2 ;
-        answers = DBClass.answersL2 ;
-        hint = DBClass.hintsL2 ;
+        questions = DBClass.questionsL3 ;
+        answers = DBClass.answersL3 ;
+        hint = DBClass.hintsL3 ;
 
         q1View.setText(questions[0]);
         q2View.setText(questions[1]);
@@ -198,7 +198,7 @@ public class Level2 extends AppCompatActivity {
                         randomNo2 = rand.nextInt(obj.wordsAfterLevelLength());
                         word = obj.wordsAfterLevel[randomNo2];
 
-                        AlertDialog.Builder builder = new AlertDialog.Builder(Level2.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(Level3.this);
                         View DView = getLayoutInflater().inflate(R.layout.after_eachlevel_dialog, null);
 
                         TextView Dword = (TextView) DView.findViewById(R.id.DWordsView);
@@ -230,14 +230,14 @@ public class Level2 extends AppCompatActivity {
 
                             @Override
                             public void onClick(View v) {
-                                startActivity(new Intent(Level2.this, Level3.class));
+                                startActivity(new Intent(Level3.this, Level4.class));
                             }
                         });
                         toMainBtnD.setOnClickListener(new View.OnClickListener() {
 
                             @Override
                             public void onClick(View v) {
-                                startActivity(new Intent(Level2.this, MainPageActivity.class));
+                                startActivity(new Intent(Level3.this, MainPageActivity.class));
                             }
                         });
 
@@ -258,7 +258,7 @@ public class Level2 extends AppCompatActivity {
     }
 
     public void showFirstDialog() {
-        final AlertDialog.Builder firstBuilder = new AlertDialog.Builder(Level2.this);
+        final AlertDialog.Builder firstBuilder = new AlertDialog.Builder(Level3.this);
 
         firstBuilder.setTitle(randomQuestion)
                 .setSingleChoiceItems(choices, -1 , new DialogInterface.OnClickListener() {
@@ -280,7 +280,7 @@ public class Level2 extends AppCompatActivity {
                             isAnswerCorrect = false ;
                         }
 
-                        Toast.makeText(Level2.this,msg,Toast.LENGTH_LONG).show();
+                        Toast.makeText(Level3.this,msg,Toast.LENGTH_LONG).show();
                         dialog.dismiss();
                         showSecondDialog();
 
@@ -295,7 +295,7 @@ public class Level2 extends AppCompatActivity {
 
 
     public void showSecondDialog() {
-        AlertDialog.Builder secondBuilder = new AlertDialog.Builder(Level2.this);
+        AlertDialog.Builder secondBuilder = new AlertDialog.Builder(Level3.this);
 
         secondBuilder.setTitle("تزود ... ")
                 .setItems(questions, new DialogInterface.OnClickListener() {
@@ -312,7 +312,7 @@ public class Level2 extends AppCompatActivity {
     }
 
     public void showThirdDialog(int index) {
-        AlertDialog.Builder thirdBuilder = new AlertDialog.Builder(Level2.this);
+        AlertDialog.Builder thirdBuilder = new AlertDialog.Builder(Level3.this);
 
         thirdBuilder.setTitle(questions[index])
                 .setMessage(hint[index]);
