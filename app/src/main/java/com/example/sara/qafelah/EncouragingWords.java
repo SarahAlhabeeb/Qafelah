@@ -5,9 +5,8 @@ package com.example.sara.qafelah;
  */
 
 public class EncouragingWords {
-    //TODO لازم نغير هالكلمات لا ننفضح عند أ.نورة :)
     final public String[] words4EachAnswer = {"بارك الله فيك","نفع الله بك" ,"زادك الله رفعة" , "أحسنت" , "أجزل الله لك الأجر" , "أحسن الله إليك" };
-    final public String[] wordsAfterLevel = {"أحسنت" , "بارك الله فيك" , "أحسن الله إليك"} ; // فكر فكر
+    final public String[] wordsAfterLevel = {"أحسنت!" , "اجتزت المرحلة بنجاح، تابع السير!" , "رائع، لقد تخطيت المرحلة بنجاح!"} ; // فكر فكر
 
     public int words4EachAnswerLength(){
         return words4EachAnswer.length ;

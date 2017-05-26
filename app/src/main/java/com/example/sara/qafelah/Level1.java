@@ -161,7 +161,7 @@ public class Level1 extends AppCompatActivity {
                     // استخراج جملة عشوائية من EncouragingWords class
                     randomNo1 = rand.nextInt(obj.words4EachAnswer.length);
                     word = obj.words4EachAnswer[randomNo1];
-                    //Toast.makeText(getApplicationContext(), word, Toast.LENGTH_LONG).show();
+
 
                     //To show the correct sign image
                     correctSign.setVisibility(View.VISIBLE);

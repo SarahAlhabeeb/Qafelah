@@ -26,8 +26,7 @@ public class About extends AppCompatActivity {
                 "في كل محطة من محطاتها مع مرحلة من مراحل \n" +
                 "حياة النبي ﷺ، ومن خلال الأسئلة والتلميحات\n" +
                 " التي يقدمها التطبيق ستزداد معرفة المستخدم\n" +
-                " بسيرة نبيه، وسيصبح أكثر ارتباطا وحبا بها حيث \n" +
-                "يقوم التطبيق بتذكيره بدخول التطبيق لحل مرحلة يوميا. \n");
+                " بسيرة نبيه، وسيصبح أكثر ارتباطا وحبا بها. \n");
 
         //To change the font
         Typeface type = Typeface.createFromAsset(getAssets(),"fonts/AlNile.ttc");
